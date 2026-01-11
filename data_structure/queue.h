@@ -24,22 +24,27 @@ struct Queue {
 
     void push(int x)
     {
-        if(queue.full()) {
+        if(full()) {
             printf("Input %d Queue Full\n", x);
             return;
         }
+
         data[tail] = x;
         tail = (tail + 1) % MAX_QUEUE_NUM;
+        size++;
     }
     
     int pop()
     {
-        if(queue.empty()) {
+        if(empty()) {
             printf("Queue Empty\n");
             return -9999;
         }
+
         int val = data[head];
         head = (head + 1) % MAX_QUEUE_NUM;
+        size--;
+
         return val;
     }
 };

@@ -10,10 +10,14 @@ int main()
         queue.push(x);
     }
 
+    queue.full();
+
     for(int iter = 0; iter < MAX_QUEUE_NUM + 1; iter++)
     {
-        printf("%d", queue.pop());
+        printf("%d\n", queue.pop());
     }
+
+    queue.empty();
 
     return 0;
 }
